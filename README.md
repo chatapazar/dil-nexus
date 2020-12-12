@@ -15,6 +15,7 @@ change password
 
 set enable anonymous access
 
+# set config map
 change camel-k-maven-setiings.xml --> search with route from previous step
 
 example
@@ -33,7 +34,7 @@ after camel-k start, use below command
 
 oc patch -n nexus integration/test-events --patch $'spec:\n replicas: 0' --type merge
 
-
+# update configmap all user*
 COUNT=1
 
 MAX=4
