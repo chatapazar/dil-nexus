@@ -35,6 +35,7 @@ function check_pod(){
     done
 }
 oc new-project ${CICD_PROJECT}  --display-name="Nexus"
+#--as-deployment-config=true
 oc new-app sonatype/nexus3:${NEXUS_VERSION} --name=nexus -n ${CICD_PROJECT} 
 oc create route edge nexus --service=nexus --port=8081
 oc rollout pause dc nexus -n ${CICD_PROJECT}
